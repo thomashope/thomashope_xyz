@@ -4,6 +4,7 @@ import glob
 import markdown
 
 src_dir = 'src'
+md = markdown.Markdown(extensions=['fenced_code'])
 
 def create_dirs(dirpath):
 	if not os.path.exists(dirpath):
@@ -33,7 +34,7 @@ def build_markdown_files():
 	for path in glob.iglob(globpath, recursive=True):
 		with open(path, 'r') as file:
 			raw = file.read();
-			html = markdown.markdown(raw)
+			html = md.convert(raw)
 
 		destination = os.path.join('public', os.path.splitext(path[len(src_dir)+1:])[0] + '.html')
 		create_dirs(os.path.split(destination)[0])
