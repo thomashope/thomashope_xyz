@@ -1,6 +1,6 @@
 #!/bin/bash
-while true; do
-  ls src/* | entr -d ./build.py
+while sleep 0.1; do
+  find src | entr -d ./build.py
 done
 
 #
