@@ -10,7 +10,7 @@ Previously I worked at Flavourworks on games and in house tools. I'm currently b
 
 ### 2022
 
-* [Custom text navigation keys on macOS](2022/text-navigation.html)
+* [Better text navigation keys on macOS](2022/text-navigation.html)
 
 ### 2021
 
