@@ -9,7 +9,7 @@ def create_dirs(dirpath):
 	if not os.path.exists(dirpath):
 		os.makedirs(dirpath)
 
-def mirror_src_files(globpath):
+def mirror_files(globpath):
 	globpath = os.path.join(src_dir, globpath)
 	print('mirroring files', globpath)
 	for path in glob.iglob(globpath, recursive=True):
@@ -23,7 +23,7 @@ def mirror_src_files(globpath):
 		with open(destination, 'w') as file:
 			file.write(raw)
 
-def mirror_markdown_files():
+def build_markdown_files():
 	globpath = os.path.join(src_dir, "**", "*.md")
 	print('mirroring files', globpath)
 
@@ -47,9 +47,9 @@ def mirror_markdown_files():
 def main():
 	print('Starting build...')
 	create_dirs('public')
-	mirror_src_files(os.path.join('**', '*.html'))
-	mirror_src_files(os.path.join('**', '*.css'))
-	mirror_markdown_files()
+	mirror_files(os.path.join('**', '*.html'))
+	mirror_files(os.path.join('**', '*.css'))
+	build_markdown_files()
 	print('Done!')
 
 if __name__ == '__main__':
