@@ -3,36 +3,40 @@ import os
 import glob
 import markdown
 
-def create_dir(dirpath):
-	if not os.path.exists(dirpath):
-		os.mkdir(dirpath)
+src_dir = 'src'
 
-def mirror_src_files(globpath):	
-	globpath = os.path.join('src', globpath)
-	print('copying files', globpath)
-	for path in glob.iglob(globpath):
+def create_dirs(dirpath):
+	if not os.path.exists(dirpath):
+		os.makedirs(dirpath)
+
+def mirror_src_files(globpath):
+	globpath = os.path.join(src_dir, globpath)
+	print('mirroring files', globpath)
+	for path in glob.iglob(globpath, recursive=True):
 		with open(path, 'r') as file:
 			raw = file.read();
-		
-		file_name = os.path.basename(path)
-		destination = os.path.join('public', file_name)
+
+		destination = os.path.join('public', path[len(src_dir)+1:])
+		create_dirs(os.path.split(destination)[0])
 		print('copying', path, destination)
 
 		with open(destination, 'w') as file:
 			file.write(raw)
 
 def mirror_markdown_files():
+	globpath = os.path.join(src_dir, "**", "*.md")
+	print('mirroring files', globpath)
+
 	header = open(os.path.join('src', 'header.template')).read()
 	footer = open(os.path.join('src', 'footer.template')).read()
-	globpath = os.path.join('src', '*.md')
-	print('copying files', globpath)
-	for path in glob.iglob(globpath):
+
+	for path in glob.iglob(globpath, recursive=True):
 		with open(path, 'r') as file:
 			raw = file.read();
 			html = markdown.markdown(raw)
-		
-		file_name = os.path.basename(path)
-		destination = os.path.join('public', os.path.splitext(file_name)[0] + '.html')
+
+		destination = os.path.join('public', os.path.splitext(path[len(src_dir)+1:])[0] + '.html')
+		create_dirs(os.path.split(destination)[0])
 		print('copying', path, destination)
 
 		with open(destination, 'w') as file:
@@ -42,9 +46,9 @@ def mirror_markdown_files():
 
 def main():
 	print('Starting build...')
-	create_dir('public')
-	mirror_src_files('*.html')
-	mirror_src_files('*.css')
+	create_dirs('public')
+	mirror_src_files(os.path.join('**', '*.html'))
+	mirror_src_files(os.path.join('**', '*.css'))
 	mirror_markdown_files()
 	print('Done!')
 
