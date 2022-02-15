@@ -18,4 +18,4 @@ Previously I worked at Flavourworks on games and in house tools. I'm currently b
 * [Organising Photos](2021/photos.html)
 * [Better shell scripts](2021/better-shell-scripts.html)
 * [Mouse sensitivity on macOS](2021/mac-cursor-speed.html)
-* [WebAssembly game On Itch.io](/)
+* [WebAssembly game On Itch.io](2021/itch-io-wasm.html)
