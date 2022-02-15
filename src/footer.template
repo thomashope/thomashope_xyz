@@ -2,7 +2,9 @@
 	<hr>
 	<footer>
 		<ul>
-			<li> <a href="https://twitter.com/thope_xyz">@thope_xyz</a></li>
+			<li> <a href="https://twitter.com/thope_xyz" target="_blank">twitter: @thope_xyz</a></li>
+			<li> <a href="https://github.com/thomashope" target="_blank">github</a></li>
+			<li> <a href="https://thomas-hope.itch.io/" target="_blank">itch.io</a></li>
 		</ul>
 	</footer>
 </body>
