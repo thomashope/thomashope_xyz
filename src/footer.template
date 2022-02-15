@@ -7,5 +7,7 @@
 			<li> <a href="https://thomas-hope.itch.io/" target="_blank">itch.io</a></li>
 		</ul>
 	</footer>
+	<hr>
+	<small><a href="$$GIT_HISTORY_LINK$$">Edited: $$DATE_EDITED$$</a></small>
 </body>
 </html>

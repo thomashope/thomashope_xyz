@@ -27,6 +27,13 @@ pre code {
 	overflow: auto;
 }
 
+small a:link,
+small a:visited,
+small a:hover,
+small a:active {
+	color: #aaa;
+}
+
 /*
 	Responsive YouTube video embed, Shadertoy, itch.io, etc.
 	Optionally set a specific aspect ratio on the div by adding:
