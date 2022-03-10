@@ -1,3 +1,5 @@
+title: Short Variable Names
+description: A defence of i, j, it, et al.
 
 # Short Variable Names
 

@@ -1,3 +1,5 @@
+description: The personal website of Thomas Hope.
+
 # Hello, I'm Tom 👋
 
 A simple games programmer.

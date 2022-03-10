@@ -1,3 +1,6 @@
+title: Mac Cursor Speed
+description: Increase the cursor speed on mac above what is allowed in the UI.
+
 # Faster Cursor on Mac
 
 My cursor speed was too slow, but I already had the speed maxed out in System Preferences.

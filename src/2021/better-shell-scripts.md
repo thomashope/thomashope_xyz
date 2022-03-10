@@ -1,3 +1,5 @@
+title: Better Shell Scripts
+
 # Better Shell Scripts
 
 <p>Batch and Bash scripts are never elegant, but in many scenarios they are the lowest common denominator and they get the job done. The <a href="https://betterdev.blog/minimal-safe-bash-script-template/">minimally safe bash script template</a> was doing the rounds on Hacker News a while back with some handy advice for making bash a bit less error prone.</p>

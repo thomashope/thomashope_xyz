@@ -1,3 +1,5 @@
+title: Hosting WebAssembly on itch.io
+
 # Hosting your WebAssembly Game on itch.io
 
 <p>Here it is. My very simple WebAssembly game, written in c++ and built using <a href="https://emscripten.org/index.html">Emscripten</a>, hosted on itch.io</p>

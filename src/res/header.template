@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+	< !-- Global site tag (gtag.js) - Google Analytics -- >
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-30326985-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-30326985-1');
+	</script>
+	-->
+	<title>$$TITLE$$</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/global.css">
+	<meta name="description" content="$$DESCRIPTION$$">
+	<meta name="keywords" content="programming, c#, c++, unity">
+	<meta name="author" content="Thomas Hope">
+	<meta property="og:title" content="$$TITLE$$">
+	<meta property="og:url" content="$$URL$$">
+	<meta property="og:description" content="$$DESCRIPTION$$">
+	<meta property="og:image" content="https://thomashope.xyz/res/diving.jpg">
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@thope_xyz" />
+	<meta name="twitter:creator" content="@thope_xyz" />
+	<meta name="twitter:image" content="https://thomashope.xyz/res/diving.jpg" />
+</head>
+</head>
+<body>
+	<header>
+	<nav>
+		<a href="/">Home</a>
+	</nav>
+	</header>
+	<hr>
