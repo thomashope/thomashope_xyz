@@ -10,7 +10,7 @@ But are there any low hanging improvements for our batch scripts on Windows?
 
 ## Better .bat
 
-<p>One of the best tips from the minimally safe bash script template was having the script exit on the first failed command. While it seems windows dosen't have a way to exactly replicate that behavior, I was able to get something similar.</p>
+<p>One of the best tips from the minimally safe bash script template was having the script exit on the first failed command. While it seems windows doesn't have a way to exactly replicate that behavior, I was able to get something similar.</p>
 
 ```
 commandThatMightFail || goto :error

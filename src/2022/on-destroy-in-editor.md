@@ -1,5 +1,5 @@
 title: Implementing `OnDestroyInEditor()` in Unity
-description: Adding for custom tools to only be called when an object is destroyed in edit mode.
+description: Running tools code only when an object is destroyed in edit mode.
 
 # Implementing `OnDestroyInEditor()` in Unity
 
@@ -7,7 +7,7 @@ While developing level editing tools in Unity I found myself wanting to call a f
 
 ## Use Case
 
-Specifically, I had list of FloorNode objects referencing each other in a loop, each with an attached FloorNodeScript with the `[ExecuteAlways]` attribute. The user could drag around the floor nodes which in turn would generate a polygonal floor mesh in real time.
+Specifically, I had list of FloorNode objects referencing each other in a loop, each with an attached FloorNodeScript with the `[ExecuteAlways]` attribute. The user could drag around the floor nodes which defined the edges of a polygonal floor mesh generated in real time.
 
 I had working code that allowed creating new nodes and deleting existing nodes, fixing up the references as it did so. However if the user selected a node in the editor and pressed the delete key those functions would not be called, and the loop of node references would become broken.
 
