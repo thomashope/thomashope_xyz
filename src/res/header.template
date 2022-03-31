@@ -13,7 +13,7 @@
 	-->
 	<title>$$TITLE$$</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/global.css">
+	<link rel="stylesheet" href="/res/global.css">
 	<meta name="description" content="$$DESCRIPTION$$">
 	<meta name="keywords" content="programming, c#, c++, unity">
 	<meta name="author" content="Thomas Hope">
