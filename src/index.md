@@ -10,9 +10,10 @@ Previously I worked at Flavourworks on games and in house tools. I'm currently b
 
 ## Blog posts:
 
-<!--
 ### 2022
+* [Unity OnDestroyInEditor()](2022/on-destroy-in-editor.html)
 
+<!--
 * [Better text navigation keys on macOS](2022/text-navigation.html)
 -->
 
