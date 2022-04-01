@@ -1,5 +1,5 @@
 title: Implementing `OnDestroyInEditor()` in Unity
-description: Running tools code only when an object is destroyed in edit mode.
+description: How to call a function when an object is destroyed in edit mode.
 
 # Implementing `OnDestroyInEditor()` in Unity
 
