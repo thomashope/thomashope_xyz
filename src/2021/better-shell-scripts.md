@@ -1,4 +1,5 @@
 title: Better Shell Scripts
+description: Trying desperately to make batch script even slightly less terrible
 
 # Better Shell Scripts
 

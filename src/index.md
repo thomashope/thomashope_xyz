@@ -1,4 +1,5 @@
-description: The personal website of Thomas Hope.
+title: Thomas Hope - Programmer
+description: Blog posts about life, tech, and games programming. C++, C#, Lua, Python, Bash, Unity.
 
 # Hello, I'm Tom 👋
 

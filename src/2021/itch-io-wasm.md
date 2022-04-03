@@ -1,4 +1,5 @@
 title: Hosting WebAssembly on itch.io
+description: You compiled it with Emscripten, now what.
 
 # Hosting your WebAssembly Game on itch.io
 
