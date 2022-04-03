@@ -53,8 +53,9 @@ def build_markdown_files():
 		if 'description' in md.Meta:
 			description = md.Meta['description'][0]
 
-		if len(description) > 65:
-			print_warning('Description should be kept under 65 characters! Length is ' + str(len(description)))
+		max_description_length = 120
+		if len(description) > max_description_length:
+			print_warning('Description should be kept under ' + str(max_description_length) + ' characters! Length is ' + str(len(description)))
 
 		site_path = os.path.splitext(path[len(src_dir)+1:])[0] + '.html'
 		destination = os.path.join('public', site_path)

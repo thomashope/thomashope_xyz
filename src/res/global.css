@@ -2,8 +2,8 @@ body {
 	background-color: #fffffd;
   	font-family: "Trebuchet MS", Helvetica, sans-serif;
   	line-height: 1.5em;
-  	margin: 1em auto;
-  	padding-left: 0.5em;
+  	margin: 0em auto;
+  	padding: 0.5em;
   	max-width: 40em;
 }
 
@@ -16,14 +16,15 @@ code {
 	background-color: #f2f2f2;
 	border: 1px solid #999;
 	padding: 0 0.3em;
+	word-wrap: break-word;
 }
 
 pre code {
 	padding: 0.5em 1em;
 	box-shadow: 4px 4px 6px #aaa;
 	display: inline-block;
-	min-width: 80%;
-	max-width: 100%;
+	min-width: 60%;
+	max-width: 90%;
 	overflow: auto;
 }
 
