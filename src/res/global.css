@@ -35,6 +35,11 @@ small a:active {
 	color: #aaa;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 /*
 	Responsive YouTube video embed, Shadertoy, itch.io, etc.
 	Optionally set a specific aspect ratio on the div by adding:
