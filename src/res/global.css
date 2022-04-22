@@ -1,0 +1,59 @@
+body {
+	background-color: #fffffd;
+  	font-family: "Trebuchet MS", Helvetica, sans-serif;
+  	line-height: 1.5em;
+  	margin: 0em auto;
+  	padding: 0.5em;
+  	max-width: 40em;
+}
+
+h1, h2, h3, h4 {
+	line-height: 1.5em;
+}
+
+code {
+	line-height: 1.5em;
+	background-color: #f2f2f2;
+	border: 1px solid #999;
+	padding: 0 0.3em;
+	word-wrap: break-word;
+}
+
+pre code {
+	padding: 0.5em 1em;
+	box-shadow: 4px 4px 6px #aaa;
+	display: inline-block;
+	min-width: 60%;
+	max-width: 90%;
+	overflow: auto;
+}
+
+small a:link,
+small a:visited,
+small a:hover,
+small a:active {
+	color: #aaa;
+}
+
+/*
+	Responsive YouTube video embed, Shadertoy, itch.io, etc.
+	Optionally set a specific aspect ratio on the div by adding:
+
+	style="--aspect-ratio: 1/4;"
+
+	Replacing the 1/4 with whatever aspect ratio you want. Defaults to 16:9.
+*/
+.fluidiframe {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+	margin-bottom: 1.6rem;
+}
+.fluidiframe iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
