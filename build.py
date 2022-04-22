@@ -78,7 +78,7 @@ def build_markdown_files():
 def main():
 	print('Starting build...')
 	create_dirs('public')
-	mirror_files_with_extensions(['html', 'css', 'jpg'])
+	mirror_files_with_extensions(['html', 'css', 'jpg', 'png'])
 	build_markdown_files()
 	print('Done!')
 
