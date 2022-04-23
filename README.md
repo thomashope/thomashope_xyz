@@ -26,3 +26,6 @@ description: Description showen on twitter cards and search engine previews
 ## TODO
 * try get the shell scripts to work on both windows and mac
 * figure out how to do auto building on windows
+* favicon
+* some kind of tip jar button
+* email newsletter signup

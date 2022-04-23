@@ -9,15 +9,15 @@ NB: Written for Unity 2020.3 using the Universal Render Pipeline
 
 ## Why No Work? 😭
 
-[Static Batching](https://docs.unity3d.com/2020.3/Documentation/Manual/static-batching.html) is where Unity automatically combines a bunch of separate meshes into a single mesh behind the scenes, and renders them all at once. This is sometimes faster, but requires them to all be rendered with the same properties.
+[Static Batching](https://docs.unity3d.com/2020.3/Documentation/Manual/static-batching.html) is where Unity automatically combines multiple meshes into a single mesh behind the scenes, and renders them all at once. This is sometimes faster, but requires them to all be rendered with the same properties.
 
 `MaterialPropertyBlock`s are a way of supplying different material properties per object, e.g. a different colour, without having to create a unique material each time.
 
-Or to put it another way. `MaterialPropertyBlock`s are an optimisation for supplying **different properties to each object**. Static Batching is an optimisation for rendering a bunch of different objects **with the same properties**.
+Or to put it another way. `MaterialPropertyBlock`s are an optimisation for supplying **different properties to each object**. Static Batching is an optimisation for rendering multiple objects **with the same properties**.
 
 Do you see how these two approaches are not compatible?
 
-Unity does actually give the following hint, but until today I didn't really understand what it meant and my eyes just glossed over it.
+Unity actually give the following hint, but until today I didn't understand what it meant and my eyes just glossed over it.
 
 ![Picture of warning text on mesh renderer when you have an instanced material. The warning Reads "This Renderer uses static batching and instanced Shaders. When the Player is active, instancing is disable. If you want instanced Shaders at run time, disable static batching."](/2022/mpb-not-working/warning.png)
 
@@ -61,7 +61,7 @@ If you want to learn more about how both static and dynamic batching work, and h
 
 ## Other Trivia
 
-If you know what instanced rendering is, you may be wondering if `MaterialPropertyBlock`s are related to that. The answer is yes, they are related, and `MaterialPropertyBlock`s are compatible with instancing, but instancing is disabled by default and has to be explicitly enabled per material.
+If you know what instanced rendering is, you may be wondering if `MaterialPropertyBlock`s are related to that. The answer is yes, they are related. However although `MaterialPropertyBlock`s are compatible with instancing, instancing is disabled by default and has to be explicitly enabled per material.
 
 ![Screenshot of Enable GPU Instancing checkbox in the material inspector](/2022/mpb-not-working/enable-gpu-instancing.png)
 
