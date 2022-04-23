@@ -10,8 +10,6 @@
 
 ## Building (windows)
 
-Use windows cmd, git bash doesn't seem to like it
-
 `python build.py` to build
 
 `python -m http.server --directory public` to serve
@@ -21,6 +19,7 @@ Use windows cmd, git bash doesn't seem to like it
 ```
 title: Title to be displayed in the browser tab
 description: Description showen on twitter cards and search engine previews
+image: /2022/path/to/image.png
 ```
 
 ## TODO
