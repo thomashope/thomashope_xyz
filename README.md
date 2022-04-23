@@ -22,6 +22,16 @@ description: Description showen on twitter cards and search engine previews
 image: /2022/path/to/image.png
 ```
 
+## How to Update the Favicon
+
+Favicon was added by following [these instructions](https://dev.to/masakudamatsu/favicon-nightmare-how-to-maintain-sanity-3al7)
+
+* Create an .svg image. vectr.com is a free online vector editor
+* Upload the .svg to [Real Favicon Generator](https://realfavicongenerator.net/)
+* Download the generated files. Extract favicon.ico, apple-touch-icon.png, and site.webmanifest and place them in the src folder.
+
+Just replacing the files should be enough, no need to modify the html unless something is broken.
+
 ## TODO
 * try get the shell scripts to work on both windows and mac
 * figure out how to do auto building on windows

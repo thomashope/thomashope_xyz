@@ -10,12 +10,16 @@
 
 		gtag('config', 'UA-30326985-1');
 	</script>
+
 	<title>$$TITLE$$</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/res/global.css">
 	<meta name="description" content="$$DESCRIPTION$$">
 	<meta name="keywords" content="programming, c#, c++, unity">
 	<meta name="author" content="Thomas Hope">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Open Graph / Facebook / Twitter cards -->
 	<meta property="og:title" content="$$TITLE$$">
 	<meta property="og:url" content="$$URL$$">
 	<meta property="og:description" content="$$DESCRIPTION$$">
@@ -24,7 +28,12 @@
 	<meta name="twitter:site" content="@thope_xyz" />
 	<meta name="twitter:creator" content="@thope_xyz" />
 	<meta name="twitter:image" content="https://thomashope.xyz$$IMAGE$$" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon -->
+	<link rel="icon" href="/favicon.ico" sizes="any">
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+	<link rel="manifest" href="/site.webmanifest" />
 </head>
 </head>
 <body>
