@@ -53,6 +53,10 @@ def build_markdown_files():
 		if 'description' in md.Meta:
 			description = md.Meta['description'][0]
 
+		image_path = '/res/diving.jpg'
+		if 'image' in md.Meta:
+			image_path = md.Meta['image'][0]
+
 		max_description_length = 120
 		if len(description) > max_description_length:
 			print_warning('Description should be kept under ' + str(max_description_length) + ' characters! Length is ' + str(len(description)))
@@ -69,7 +73,8 @@ def build_markdown_files():
 			file.write(header
 				.replace('$$TITLE$$', title)
 				.replace('$$DESCRIPTION$$', description)
-				.replace('$$URL$$', url))
+				.replace('$$URL$$', url)
+				.replace('$$IMAGE$$', image_path))
 			file.write(html)
 			file.write(footer
 				.replace('$$DATE_EDITED$$', date_edited)
