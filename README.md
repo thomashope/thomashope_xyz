@@ -36,4 +36,3 @@ Just replacing the files should be enough, no need to modify the html unless som
 * try get the shell scripts to work on both windows and mac
 * figure out how to do auto building on windows
 * some kind of tip jar button
-* email newsletter signup
