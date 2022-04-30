@@ -41,6 +41,26 @@ img {
 	height: auto;
 }
 
+li {
+	margin-bottom: 0.4em;
+}
+
+footer {
+	text-align: center;
+}
+
+footer a {
+	margin-left: 1em;
+}
+
+footer div {
+	margin-bottom: 0.5em;
+}
+
+footer input, footer label {
+	margin-bottom: 0.5em;
+}
+
 /*
 	Responsive YouTube video embed, Shadertoy, itch.io, etc.
 	Optionally set a specific aspect ratio on the div by adding:
