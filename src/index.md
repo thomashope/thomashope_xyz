@@ -12,6 +12,7 @@ Previously I worked at Flavourworks on games and in house tools. I'm currently b
 ## Blog posts:
 
 ### 2022
+* [Coloured text in Debug.log()](2022/unity-debug-log.html)
 * [MaterialPropertyBlocks are not compatible with Static Batching](2022/mpb-not-working.html)
 * [Unity OnDestroyInEditor()](2022/on-destroy-in-editor.html)
 
