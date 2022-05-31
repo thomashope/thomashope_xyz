@@ -10,7 +10,9 @@
 
 ## Building (windows)
 
-`python build.py` to build
+Open a CMD at this repo
+
+`build.py` to build
 
 `python -m http.server --directory public` to serve
 
@@ -32,7 +34,19 @@ Favicon was added by following [these instructions](https://dev.to/masakudamatsu
 
 Just replacing the files should be enough, no need to modify the html unless something is broken.
 
+## Publishing
+
+You can connect to Fastmail file hosting via WebDAV on Mac via finder, or Windows from Explorer by following [these instructions](https://www.fastmail.help/hc/en-us/articles/1500000277882-Remote-file-access)
+
 ## TODO
+
 * try get the shell scripts to work on both windows and mac
 * figure out how to do auto building on windows
 * some kind of tip jar button
+* improve 404 page
+	* fancy glitch css on 404 text
+	* suggest wayback machine archive link
+	* suggest git repo link
+* try out cloudflare analytics https://www.cloudflare.com/web-analytics/
+* make script to publish on windows
+* try unifying serve and publish scripts on windows and mac using python?
