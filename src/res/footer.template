@@ -8,7 +8,7 @@
 		</div>
 		<div>
 			<form action="https://tinyletter.com/thope" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thope', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
-				<label for="tlemail">Get notified:</label>
+				<label for="tlemail">Get the Inside Scoop:</label>
 				<input type="text" style="width:180px" name="email" id="tlemail"/>
 				<input type="hidden" value="1" name="embed"/>
 				<input type="submit" value="Subscribe"/>

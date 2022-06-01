@@ -61,6 +61,10 @@ footer input, footer label {
 	margin-bottom: 0.5em;
 }
 
+video {
+	width: 100%;
+}
+
 /*
 	Responsive YouTube video embed, Shadertoy, itch.io, etc.
 	Optionally set a specific aspect ratio on the div by adding:
