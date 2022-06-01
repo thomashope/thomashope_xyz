@@ -48,5 +48,5 @@ You can connect to Fastmail file hosting via WebDAV on Mac via finder, or Window
 	* suggest wayback machine archive link
 	* suggest git repo link
 * try out cloudflare analytics https://www.cloudflare.com/web-analytics/
-* make script to publish on windows
 * try unifying serve and publish scripts on windows and mac using python?
+	- could maybe fix robocopy copying all the files every time due to timezones being different
