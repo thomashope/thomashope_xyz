@@ -6,7 +6,7 @@ import subprocess
 import shutil
 
 src_dir = 'src'
-md = markdown.Markdown(extensions=['fenced_code', 'meta'])
+md = markdown.Markdown(extensions=['fenced_code', 'meta', 'tables'])
 
 def print_warning(str):
 	print('\033[93m' + 'WARNING: ' + str + '\033[0m')
