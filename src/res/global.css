@@ -45,6 +45,28 @@ li {
 	margin-bottom: 0.4em;
 }
 
+/* tables */
+
+table {
+	width: 100%;
+}
+
+table tr {
+	margin: 0px 0px;
+	border: 1px solid;
+}
+
+table td,
+table th {
+	padding-right: 0.2em;
+}
+
+table tfoot {
+	font-weight: bold;
+}
+
+/* footer */
+
 footer {
 	text-align: center;
 }
@@ -60,6 +82,8 @@ footer div {
 footer input, footer label {
 	margin-bottom: 0.5em;
 }
+
+/* video */
 
 video {
 	width: 100%;
