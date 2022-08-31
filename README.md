@@ -24,6 +24,8 @@ description: Description showen on twitter cards and search engine previews
 image: /2022/path/to/image.png
 ```
 
+You can previous the rendered social card using [this site](https://www.opengraph.xyz/url/https%3A%2F%2Fthomashope.xyz%2F) or on [twitter](https://cards-dev.twitter.com/validator).
+
 ## How to Update the Favicon
 
 Favicon was added by following [these instructions](https://dev.to/masakudamatsu/favicon-nightmare-how-to-maintain-sanity-3al7)
