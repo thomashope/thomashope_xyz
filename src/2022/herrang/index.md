@@ -2,7 +2,7 @@ title: Herräng '22 - Chaos, Magic, Joy.
 description: What were the criticisms? How much does Herräng cost to attend? Should you go?
 image: /2022/herrang/parade.jpg
 
-# Herräng 2022
+# Herräng Dance Camp '22
 
 ## Foreword: Criticisms of Herräng Dance Camp
 
@@ -20,7 +20,7 @@ There is still A lot I know I'm leaving unsaid, perhaps I'll return to this topi
 
 ---
 
-Hej! 👋
+## Hej! 👋
 
 This year I was super happy to be able to attend Herräng Dance Camp for the second time, long story short, it was great!
 

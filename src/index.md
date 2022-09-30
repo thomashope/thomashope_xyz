@@ -12,7 +12,7 @@ Previously I worked at Flavourworks on games and in house tools. I'm currently b
 ## Blog posts:
 
 ### 2022
-* [Herräng '22](2022/herrang)
+* [Herräng Dance Camp '22](2022/herrang)
 * [Custom Selection in the Scene View](2022/scene-view-double-click.html)
 * [Coloured text in Debug.log()](2022/unity-debug-log.html)
 * [MaterialPropertyBlocks are not compatible with Static Batching](2022/mpb-not-working.html)
