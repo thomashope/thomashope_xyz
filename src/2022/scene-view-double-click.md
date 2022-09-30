@@ -7,6 +7,7 @@ One of the designers requested that double clicking on an object in the scene vi
 
 <video autoplay loop muted playsinline disableRemotePlayback x-webkit-airplay="deny" disablePictureInPicture>
   <source src="/2022/scene-view-double-click/double-click.webm" type="video/webm" />
+  <source src="/2022/scene-view-double-click/double-click.mp4" type="video/mp4" />
 </video>
 
 A good idea that in the end didn't require much code to implement, but it did require a little hunting around to find an acceptable solution.
