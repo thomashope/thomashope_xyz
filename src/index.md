@@ -12,6 +12,7 @@ Previously I worked at Flavourworks on games and in house tools. I'm currently b
 ## Blog posts:
 
 ### 2022
+* [Fixing the Home and End keys on macOS](2022/home-end)
 * [Herräng Dance Camp '22](2022/herrang)
 * [Custom Selection in the Scene View](2022/scene-view-double-click.html)
 * [Coloured text in Debug.log()](2022/unity-debug-log.html)
