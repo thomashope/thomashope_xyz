@@ -24,6 +24,8 @@ description: Description showen on twitter cards and search engine previews
 image: /2022/path/to/image.png
 ```
 
+You can preview the rendered social card using [this site](https://www.opengraph.xyz/url/https%3A%2F%2Fthomashope.xyz%2F) or on [twitter](https://cards-dev.twitter.com/validator).
+
 ## How to Update the Favicon
 
 Favicon was added by following [these instructions](https://dev.to/masakudamatsu/favicon-nightmare-how-to-maintain-sanity-3al7)
@@ -40,6 +42,8 @@ You can connect to Fastmail file hosting via WebDAV on Mac via finder, or Window
 
 ## TODO
 
+* publish automatically when pushing to git main
+* add macro for video gif embeds {{ video, path/to/video.mp4 }} ?
 * try get the shell scripts to work on both windows and mac
 * figure out how to do auto building on windows
 * some kind of tip jar button

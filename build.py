@@ -6,7 +6,7 @@ import subprocess
 import shutil
 
 src_dir = 'src'
-md = markdown.Markdown(extensions=['fenced_code', 'meta'])
+md = markdown.Markdown(extensions=['fenced_code', 'meta', 'tables'])
 
 def print_warning(str):
 	print('\033[93m' + 'WARNING: ' + str + '\033[0m')
@@ -83,7 +83,7 @@ def build_markdown_files():
 def main():
 	print('Starting build...')
 	create_dirs('public')
-	mirror_files_with_extensions(['html', 'css', 'jpg', 'png', 'webm', 'ico', 'svg', 'webmanifest'])
+	mirror_files_with_extensions(['html', 'css', 'jpg', 'png', 'webm', 'mp4', 'ico', 'svg', 'webmanifest'])
 	build_markdown_files()
 	print('Done!')
 
