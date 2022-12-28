@@ -11,10 +11,6 @@
 		gtag('config', 'UA-30326985-1');
 	</script>
 
-	<!-- Cloudflare Web Analytics -->
-	<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4b0ddb1687a743bab46fd68457d732a4"}'></script>
-	<!-- End Cloudflare Web Analytics -->
-
 	<title>$$TITLE$$</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/res/global.css">
