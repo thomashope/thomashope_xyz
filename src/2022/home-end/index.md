@@ -115,7 +115,7 @@ etc...
 
 As far as I understand `DefaultKeyBindings.dict` essentially allows you to send messages (a.k.a. call functions) on Cocoa objects running up the entire application hierarchy, stopping at the first one that responds. You can navigate text, use hidden Emacs like behaviour built in to Cocoa including key combinations with leaders, and generally create custom shortcuts and override default system behaviour system wide.
 
-If you want to more definitely checkout Jacob Rus' article linked above.
+If you want to know more definitely checkout Jacob Rus' article linked above.
 
 You can also checkout [Apple's own documentation](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/TextDefaultsBindings/TextDefaultsBindings.html) on the subject.
 

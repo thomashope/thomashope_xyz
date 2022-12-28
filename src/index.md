@@ -3,25 +3,23 @@ description: Blog posts about life, tech, and games programming. C++, C#, Lua, P
 
 # Hello, I'm Tom 👋
 
-A simple games programmer.
+I've been working in the games industry since 2017, writing code that has shipped on Mac, PC, iOS, Android, and PlayStation 4.
 
-Previously I worked at Flavourworks on games and in house tools. I'm currently building a game with friends in Unity.
+The bulk of my experience has been writing C++, and covers engine, gameplay, graphics, pipeline, and tools.
 
 ---
 
 ## Blog posts:
 
 ### 2022
+<!-- * [Better text navigation keys on macOS](2022/text-navigation.html) -->
+<!-- * [Writing documentation comments for Xcode and Visual Studio](2022/doc-comments) -->
 * [Fixing the Home and End keys on macOS](2022/home-end)
 * [Herräng Dance Camp '22](2022/herrang)
 * [Custom Selection in the Scene View](2022/scene-view-double-click.html)
 * [Coloured text in Debug.log()](2022/unity-debug-log.html)
 * [MaterialPropertyBlocks are not compatible with Static Batching](2022/mpb-not-working.html)
 * [Unity OnDestroyInEditor()](2022/on-destroy-in-editor.html)
-
-<!--
-* [Better text navigation keys on macOS](2022/text-navigation.html)
--->
 
 ### 2021
 
