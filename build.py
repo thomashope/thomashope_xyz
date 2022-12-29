@@ -6,7 +6,7 @@ import subprocess
 import shutil
 
 src_dir = 'src'
-md = markdown.Markdown(extensions=['fenced_code', 'meta', 'tables'])
+md = markdown.Markdown(extensions=['fenced_code', 'meta', 'tables', 'footnotes'])
 
 def print_warning(str):
 	print('\033[93m' + 'WARNING: ' + str + '\033[0m')
@@ -79,6 +79,8 @@ def build_markdown_files():
 			file.write(footer
 				.replace('$$DATE_EDITED$$', date_edited)
 				.replace('$$GIT_HISTORY_LINK$$', git_history_link))
+
+		md.reset()
 
 def main():
 	print('Starting build...')
