@@ -42,8 +42,9 @@ You can connect to Fastmail file hosting via WebDAV on Mac via finder, or Window
 
 ## TODO
 
+* generate an all posts archive page that includes the old tumblr posts
 * publish automatically when pushing to git main
-* add macro for video gif embeds {{ video, path/to/video.mp4 }} ?
+* add macro for video gif embeds {{ video, path/to/video.mp4 }}, could maybe use the attribute extension instead?
 * try get the shell scripts to work on both windows and mac
 * figure out how to do auto building on windows
 * some kind of tip jar button
@@ -51,6 +52,5 @@ You can connect to Fastmail file hosting via WebDAV on Mac via finder, or Window
 	* fancy glitch css on 404 text
 	* suggest wayback machine archive link
 	* suggest git repo link
-* try out cloudflare analytics https://www.cloudflare.com/web-analytics/
 * try unifying serve and publish scripts on windows and mac using python?
 	- could maybe fix robocopy copying all the files every time due to timezones being different

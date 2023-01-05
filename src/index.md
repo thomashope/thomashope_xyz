@@ -9,7 +9,7 @@ The bulk of my experience has been writing C++, and covers engine, gameplay, gra
 
 ---
 
-## Blog posts:
+## Blog Posts
 
 ### 2022
 <!-- * [Better text navigation keys on macOS](2022/text-navigation.html) -->
