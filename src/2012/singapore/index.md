@@ -1,5 +1,7 @@
 # On the way to Singapore
 
+> _This was originally posted around 2012-11-01. Additional commentary has been placed in [square brackets]._
+
 ![Looking over the river in Singapore at the illuminated city.](singapore.jpeg)
 
 The first plan was to get a lift from Daw’s to Uthai Thani, a bus to Nakhon Sawan, a train to Bangkok and finally a plane to Singapore. We assumed that the only way to Bangkok was the train from Nakhon Sawan since that how we arrived but it turns out thats not the case. There was a bus that goes straight to Bangkok from Uthai Thani and it only takes three hours! The way we were initially planning to get there would have taken over five hours (1 on the bus, 4 on the train and some taxies in between) and would have been more expensive.
