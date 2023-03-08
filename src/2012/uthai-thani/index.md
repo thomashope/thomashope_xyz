@@ -12,7 +12,7 @@ Once we were back outside we put our shoes back on and bought a drink from a sta
   
 At the top of the staircase we found another temple. but this one was much larger. The whole place was bathed in sunlight, monks strolling around, people (including me!) were banging huge bronze bells and throwing coins at the gold covered footprint of the Buddha.
 
-> _[ The massive white stairs up the mountain, seeing a real Buddhist temple. The gold, the sun, the monks in their orange robes, seeing something completely different to anything I had seen before and realising that to them it was totally normal? It was a really amazing day. Also on reflection the staircase was probably concrete, but it had marble \*vibes\*. ]_
+> _[ The massive white stairs up the mountain, seeing a real Buddhist temple. The gold, the sun, the monks in their orange robes, seeing something completely different to anything I had seen before and realising that to them it was totally normal? It was a really amazing day. Also on reflection the staircase was probably concrete but it had marble \*vibes\*. ]_
 
 ![Me and Pear standing in front of a gold Buddha statue at the top.](buddah.png)
 ![A view over Uthai Thani from the top of the mountain.](uthai-thani.jpg)

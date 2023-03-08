@@ -16,6 +16,6 @@ As I was having a shower (which seems to be a little warmer here although it is 
 
 On Monday we go to get a health check so we can get our working permits. That should also be the week we get our first expenses payment of 8700 Bhat. This is more than we would normally get so we can kit out the apartment once we move in, hopefully next Monday.
 
-> _[ Going down the dirt track to reach Daw’s house with rickety shacks either side was a little scary at first. A man with a bonfire looked at us curiously and a few stray dogs darted between buildings. But it turned out any apprehension was completely misplaced the family were absolutely lovely. A good lesson for young me not to judge books by their covers... ]_
+> _[ Going down the dirt track to reach Daw’s house with rickety shacks either side was a little scary at first. A man with a bonfire looked at us curiously and a few stray dogs darted between buildings. But it turned out any apprehension was completely misplaced the family were absolutely lovely and wonderful hosts to us the entire time we were with them. ]_
 
 ![View through a chain link fence at our second host family's place at the little group of houses.](lookout.png)
