@@ -27,3 +27,16 @@ The bulk of my experience has been writing C++, and covers engine, gameplay, gra
 * [Better shell scripts](2021/better-shell-scripts.html)
 * [Mouse sensitivity on macOS](2021/mac-cursor-speed.html)
 * [WebAssembly game On Itch.io](2021/itch-io-wasm.html)
+
+### 2012
+
+Slightly cringe posts from my gap year in Thailand 🇹🇭
+
+* [Visiting Singapore](2012/singapore)
+* [Catchup Post](2012/catchup)
+* [Coconut Milk](2012/coconut-milk)
+* [Hupputat](2012/hupputat)
+* [New Family](2012/new-family)
+* [First Day At School](2012/school)
+* [Uthai Thani](2012/uthai-thani)
+* [Arrival in BKK](2012/bkk-arrival)
