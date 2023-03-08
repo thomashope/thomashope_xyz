@@ -6,6 +6,10 @@ import subprocess
 import shutil
 
 src_dir = 'src'
+dest_dir = 'public'
+header = open(os.path.join(src_dir, 'res', 'header.template')).read()
+footer = open(os.path.join(src_dir, 'res', 'footer.template')).read()
+
 md = markdown.Markdown(extensions=['fenced_code', 'meta', 'tables', 'footnotes'])
 
 def print_warning(str):
@@ -27,7 +31,7 @@ def mirror_files(globpath):
 	globpath = os.path.join(src_dir, globpath)
 	print('mirroring files', globpath)
 	for path in glob.iglob(globpath, recursive=True):
-		destination = os.path.join('public', path[len(src_dir)+1:])
+		destination = os.path.join(dest_dir, path[len(src_dir)+1:])
 		create_dirs(os.path.split(destination)[0])
 		print('copying', path, destination)
 		shutil.copy(path, destination)
@@ -35,9 +39,6 @@ def mirror_files(globpath):
 def build_markdown_files():
 	globpath = os.path.join(src_dir, "**", "*.md")
 	print('mirroring files', globpath)
-
-	header = open(os.path.join('src', 'res', 'header.template')).read()
-	footer = open(os.path.join('src', 'res', 'footer.template')).read()
 
 	for path in glob.iglob(globpath, recursive=True):
 		with open(path, 'r') as file:
@@ -61,7 +62,7 @@ def build_markdown_files():
 			print_warning('Description should be kept under ' + str(max_description_length) + ' characters! Length is ' + str(len(description)))
 
 		site_path = os.path.splitext(path[len(src_dir)+1:])[0] + '.html'
-		destination = os.path.join('public', site_path)
+		destination = os.path.join(dest_dir, site_path)
 		date_edited = run_cmd(['git','log','-1','--pretty="%aD"', path]).strip(' \n"')
 		git_history_link = 'https://github.com/thomashope/thomashope_xyz/commits/main/' + path
 		create_dirs(os.path.split(destination)[0])
@@ -83,7 +84,7 @@ def build_markdown_files():
 
 def main():
 	print('Starting build...')
-	create_dirs('public')
+	create_dirs(dest_dir)
 	mirror_files_with_extensions(['html', 'css', 'jpg', 'jpeg', 'png', 'webm', 'mp4', 'ico', 'svg', 'webmanifest'])
 	build_markdown_files()
 	print('Done!')
