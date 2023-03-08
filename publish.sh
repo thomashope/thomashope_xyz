@@ -4,4 +4,8 @@
 DEST="/Volumes/webdav.fastmail.com/"
 DEST="${DEST}$(ls ${DEST})/files/site"
 
-rsync -az --exclude=".DS_Store" --progress public/ ${DEST}
+SRC="public/"
+
+echo "Publishing site: ${SRC} -> ${DEST}"
+
+time rsync -az --exclude=".DS_Store" --progress ${SRC} ${DEST}
