@@ -21,7 +21,6 @@ def run_cmd(args):
 
 def mirror_files_with_extensions(exts):
 	for ext in exts:
-		print(ext)
 		mirror_files(os.path.join('**', '*.' + ext))
 
 def mirror_files(globpath):

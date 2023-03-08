@@ -73,6 +73,12 @@ nav a {
 	margin-right: 1em;
 }
 
+#site-title {
+	float: right;
+	text-decoration: none;
+	color: black;
+}
+	
 /* footer */
 
 footer {
