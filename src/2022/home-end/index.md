@@ -21,7 +21,7 @@ If, like me, you just want to make the Home and End keys do the same as they do 
 }
 ```
 
-If you are unfamiliar with the `~/Library` folder you can access it from finder by pressing `CMD+SHIFT+G`, typing `~/Library`. and pressing enter. If the `KeyBindigns` folder dosen't exist just create it.
+If you are unfamiliar with the `~/Library` folder you can access it from finder by pressing `CMD+SHIFT+G`, typing `~/Library`. and pressing enter. If the `KeyBindings` folder doesn't exist create it.
 
 ## Customisation
 
