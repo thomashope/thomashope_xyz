@@ -4,6 +4,7 @@ import glob
 import markdown
 import subprocess
 import shutil
+import re
 
 src_dir = 'src'
 dest_dir = 'public'
@@ -36,14 +37,26 @@ def mirror_files(globpath):
 		print('copying', path, destination)
 		shutil.copy(path, destination)
 
+def get_macro_expansion(macro):
+	if macro[0] == 'AUTOPLAY_VIDEO':
+		# argument is the path to a video file. This requires that
+		snippet = '<video autoplay loop muted playsinline disableRemotePlayback x-webkit-airplay="deny" disablePictureInPicture><source src="$$FILE$$.webm" type="video/webm" /><source src="$$FILE$$.mp4" type="video/mp4"/></video>'
+		file_no_ext = os.path.splitext(macro[1])[0]
+		return snippet.replace('$$FILE$$', file_no_ext)
+	return '<!-- ERROR EXPANDING MACRO ' + str(macro) + '-->'
+
 def build_markdown_files():
 	globpath = os.path.join(src_dir, "**", "*.md")
 	print('mirroring files', globpath)
 
 	for path in glob.iglob(globpath, recursive=True):
 		with open(path, 'r') as file:
-			raw = file.read();
-			html = md.convert(raw)
+			text = file.read()
+			matches = re.findall('\\$\\$.+\\$\\$', text) # find $$macros$$
+			for match in matches:
+				macro = match.strip('$)').split('(', 1) # split macro into ['name', 'args']
+				text = text.replace(match, get_macro_expansion(macro))
+			html = md.convert(text)
 
 		title = 'Thomas Hope'
 		if 'title' in md.Meta:
