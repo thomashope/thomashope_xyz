@@ -37,11 +37,12 @@
 </head>
 </head>
 <body>
-	<header>
-	<nav>
-		<a href="/">Home</a>
-		<a href="/shop">Shop</a>
-		<a href="/" id="site-title">Thomas Hope</a>
-	</nav>
-	</header>
-	<hr style="clear: both;">
+<header>
+<nav>
+	<a href="/">Home</a>
+	<a href="/shop">Shop</a>
+	<a href="/" id="site-title">Thomas Hope</a>
+</nav>
+</header>
+<hr style="clear: both;">
+
