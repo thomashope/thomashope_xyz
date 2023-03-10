@@ -40,6 +40,8 @@ Just replacing the files should be enough, no need to modify the html unless som
 
 You can connect to Fastmail file hosting via WebDAV on Mac via finder, or Windows from Explorer by following [these instructions](https://www.fastmail.help/hc/en-us/articles/1500000277882-Remote-file-access)
 
+Alternatively use (Cyberduck)[https://cyberduck.io] to connect to the Fastmail server. Then choose *Action > Syncronize*, select the Public folder, set the type to *Upload*, then press *Continue*.
+
 ## TODO
 
 * generate an all posts archive page that includes the old tumblr posts
