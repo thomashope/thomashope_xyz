@@ -123,7 +123,8 @@ def build_markdown_files():
 def create_pages_list(pages):
 	items = []
 	for date, site_path, title, page_data in pages:
-		item_html = f'<li><time>{date}</time><a href="../{site_path}">{title}</a></li>'
+		path = site_path.removesuffix('index.html')
+		item_html = f'<li><time>{date}</time><a href="../{path}">{title}</a></li>'
 		items.append(item_html)
 	return '<ul style="list-style: none; padding: 0;">\n' + '\n'.join(items) + '\n</ul>'
 
