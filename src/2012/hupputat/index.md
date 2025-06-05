@@ -1,5 +1,6 @@
 title: Visiting Huppatat
 date: 2012-09-10
+series: gap-year
 published: true
 
 > _This was originally posted on 2012-09-10. Additional commentary has been placed in [square brackets]._

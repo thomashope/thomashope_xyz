@@ -1,5 +1,6 @@
 title: October Catchup / Info Dump
 date: 2012-10-19
+series: gap-year
 published: true
 
 > _This was originally posted on 2012-10-19. Additional commentary has been placed in [square brackets]._

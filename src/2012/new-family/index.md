@@ -1,5 +1,6 @@
 title: Meeting a New Host Family
 date: 2012-09-02
+series: gap-year
 published: true
 
 > _This was originally posted on 2012-09-02 after arriving at our second host family's house. Additional commentary has been placed in [square brackets]._

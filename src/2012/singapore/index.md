@@ -1,18 +1,9 @@
-title: On The Way To Singapore
+title: Singapore
 date: 2012-11-01
+series: gap-year
 published: true
 
 # On the way to Singapore
-
-<div style="background-color: aliceblue; padding: 0.5em; border-radius: 10px; border: 0px solid black; text-align: left; padding-left: 2em;">
-	<p>This article is part of a series from my gap year in Thailand.</p>
-	<p>Articles in this series:</p>
-	<ol>
-		<li><a href=".">Arrival in BKK</a></li>
-		<li><a href=".">Huppatat</a></li>
-		<li><a href=".">Singapore</a></li>
-	</ol>
-</div>
 
 > _This was originally posted around 2012-11-01. Additional commentary has been placed in [square brackets]._
 

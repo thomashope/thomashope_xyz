@@ -42,6 +42,11 @@ small a:active {
 	color: #666;
 }
 
+li small {
+	padding-left: 1em;
+	color: #666;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -67,6 +72,15 @@ time {
 	font-family: monospace;
 	color: #666;
 	padding-right: 1em;
+}
+
+.series-footer {
+	background-color: aliceblue;
+	padding: 0.5em;
+	border-radius: 10px;
+	border: 0px solid black;
+	text-align: left;
+	padding-left: 2em;
 }
 
 /* tables */

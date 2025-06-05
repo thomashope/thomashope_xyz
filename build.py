@@ -53,6 +53,7 @@ def get_page_data(meta_data):
 	date = meta_data.get('date', ['YYYY-MM-DD'])[0]
 	published = meta_data.get('published', [''])[0].lower() == 'true'
 	featured = meta_data.get('featured', [''])[0].lower() == 'true'
+	series = meta_data.get('series', [''])[0].lower()
 
 	if len(description) > 120:
 		print_warning(f'Description should be kept under 120 characters! Length is {len(description)}')
@@ -64,6 +65,7 @@ def get_page_data(meta_data):
 		'date': date,
 		'published': published,
 		'featured': featured,
+		'series': series
 	}
 
 def get_date_edited(path):
@@ -99,32 +101,53 @@ def build_markdown_files():
 			continue
 
 		site_path = os.path.splitext(path[len(src_dir)+1:])[0] + '.html'
-		destination = os.path.join(dest_dir, site_path)
-		date_edited = get_date_edited(path)
-		git_history_link = get_git_history_link(path)
-		create_dirs(os.path.split(destination)[0])
 
-		url = 'https://thomashope.xyz/' + site_path
+		page_data['url'] = 'https://thomashope.xyz/' + site_path
+		page_data['date_edited'] = get_date_edited(path)
+		page_data['git_history_link'] = get_git_history_link(path)
 
-		pages.append([page_data['date'], site_path, page_data['title'], page_data])
-
-		with open(destination, 'w') as file:
-			file.write(insert_page_data(page_template, page_data)
-				.replace('$$URL$$', url)
-				.replace('$$CONTENT$$', html)
-				.replace('$$DATE_EDITED$$', date_edited)
-				.replace('$$GIT_HISTORY_LINK$$', git_history_link))
+		pages.append([site_path, page_data, html])
 
 		md.reset()
 
  	# Sort pages by date, assuming ISO format: YYYY-MM-DD
-	pages = sorted(pages, key=lambda p: p[0], reverse=True)
+	pages = sorted(pages, key=lambda p: p[1]['date'], reverse=True)
+
+	for site_path, page_data, page_html in pages:
+		series_info = create_series_info(page_data['series'], page_data['title'])
+		destination = os.path.join(dest_dir, site_path)
+		create_dirs(os.path.split(destination)[0])
+		with open(destination, 'w') as file:
+			file.write(insert_page_data(page_template, page_data)
+				.replace('$$URL$$', page_data['url'])
+				.replace('$$CONTENT$$', page_html + series_info)
+				.replace('$$DATE_EDITED$$', page_data['date_edited'])
+				.replace('$$GIT_HISTORY_LINK$$', page_data['git_history_link']))
+
+def create_series_info(series, this_title):
+	if not series:
+		return ''
+	entries = []
+	for site_path, page_data, html in pages:
+		if page_data['series'] == series:
+			entries.append([site_path, page_data['title']])
+	entries.reverse() # pages are sorted newest first, but we want entries sorted oldest first
+	html = f'<div class="series-footer">\n<p>This page is part of the series \'{series}\'. Check out the other entries in the series below.</p>\n<ol>\n'
+	for site_path, title in entries:
+		html += f'<li><a href="/{site_path}">{title}</a> {" <- you are here" if title == this_title else ""}</li>'
+	html += '</ol></div>\n'
+	return html
 
 def create_pages_list(pages):
 	items = []
-	for date, site_path, title, page_data in pages:
-		path = site_path.removesuffix('index.html')
-		item_html = f'<li><time>{date}</time><a href="../{path}">{title}</a></li>'
+	for site_path, page_data, html in pages:
+		title = page_data['title']
+		date = page_data['date']
+		series = page_data['series']
+		item_html = f'<time>{date}</time><a href="/{site_path}">{title}</a>'
+		if series:
+			item_html = f'{item_html}<small>{series}</small>'
+		item_html = f'<li>{item_html}</li>'
 		items.append(item_html)
 	return '<ul style="list-style: none; padding: 0;">\n' + '\n'.join(items) + '\n</ul>'
 
@@ -134,15 +157,15 @@ def build_archive():
 	src_path = os.path.join(src_dir, 'archive', 'index.md')
 	archive_md = open(src_path).read()
 	archive_md = archive_md.replace('$$PUBLISHED_PAGES_LIST$$', published_pages_html_list)
-	archive_html = md.convert(archive_md)
+	html = md.convert(archive_md)
 
 	page_data = get_page_data(md.Meta)
 	date_edited = get_date_edited(src_path)
 	git_history_link = get_git_history_link(src_path)
 	url = 'https://thomashope.xyz/archive'
-	archive_html = insert_page_data(page_template, page_data) \
+	html = insert_page_data(page_template, page_data) \
 		.replace('$$URL$$', url) \
-		.replace('$$CONTENT$$', archive_html) \
+		.replace('$$CONTENT$$', html) \
 		.replace('$$DATE_EDITED$$', date_edited) \
 		.replace('$$GIT_HISTORY_LINK$$', git_history_link)
 
@@ -150,28 +173,28 @@ def build_archive():
 	create_dirs(os.path.split(destination)[0])
 
 	with open(destination, 'w') as file:
-		file.write(archive_html)
+		file.write(html)
 
 def build_homepage():
-	featured_pages_html_list = create_pages_list([page for page in pages if page[3]['featured']])
+	featured_pages_html_list = create_pages_list([page for page in pages if page[1]['featured']])
 	
 	src_path = os.path.join(src_dir, 'index.md')
 	homepage_md = open(src_path).read()
 	homepage_md = homepage_md.replace('$$FEATURED_PAGES_LIST$$', featured_pages_html_list)
-	homepage_html = md.convert(homepage_md)
+	html = md.convert(homepage_md)
 
 	page_data = get_page_data(md.Meta)
 	date_edited = get_date_edited(src_path)
 	git_history_link = get_git_history_link(src_path)
 	url = 'https://thomashope.xyz/archive'
-	homepage_html = insert_page_data(page_template, page_data) \
+	html = insert_page_data(page_template, page_data) \
 		.replace('$$URL$$', url) \
-		.replace('$$CONTENT$$', homepage_html) \
+		.replace('$$CONTENT$$', html) \
 		.replace('$$DATE_EDITED$$', date_edited) \
 		.replace('$$GIT_HISTORY_LINK$$', git_history_link)
 
 	with open(os.path.join(dest_dir, 'index.html'), 'w') as file:
-		file.write(homepage_html)
+		file.write(html)
 
 def main():
 	print('Starting build...')
