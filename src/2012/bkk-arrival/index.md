@@ -1,6 +1,8 @@
 title: Arriving in Bangkok
 description: The first blog post from my year in Thailand with Project Trust
 image: /2012/bkk-arrival/bkk.jpeg
+date: 2012-08-24
+published: true
 
 > _This was originally posted on 2012-08-24 at the very beginning of my gap year in Thailand. Additional commentary has been placed in [square brackets]._
 

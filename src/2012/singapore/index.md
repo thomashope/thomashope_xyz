@@ -1,4 +1,18 @@
+title: On The Way To Singapore
+date: 2012-11-01
+published: true
+
 # On the way to Singapore
+
+<div style="background-color: aliceblue; padding: 0.5em; border-radius: 10px; border: 0px solid black; text-align: left; padding-left: 2em;">
+	<p>This article is part of a series from my gap year in Thailand.</p>
+	<p>Articles in this series:</p>
+	<ol>
+		<li><a href=".">Arrival in BKK</a></li>
+		<li><a href=".">Huppatat</a></li>
+		<li><a href=".">Singapore</a></li>
+	</ol>
+</div>
 
 > _This was originally posted around 2012-11-01. Additional commentary has been placed in [square brackets]._
 
@@ -21,3 +35,8 @@ Once we were on the plan it wasn’t quite as smooth though. There was a loud wh
 The whirring continued for a few more minutes until it finally changed pitch. This seemed to satisfy the pilot and we set off. 'SINGAPORE HERE WE COME!’ I screamed inside my head…
 
 [^1]: Not looking like a terrorist is essential for every traveller but to not look like an American is more of a personal goal.
+
+<div style="text-align: right; font-style: italic;">
+<!-- <p style="float: right; margin-top: 0em;">November 1st, 2012</p> -->
+<p>~ November 1st, 2012</p>
+</div>

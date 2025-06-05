@@ -1,4 +1,6 @@
 title: The Temple in Uthai Thani
+date: 2012-08-27
+published: true
 
 > _This was originally posted on 2012-08-27 after spending a short while with our first host family. Additional commentary has been placed in [square brackets]._
 

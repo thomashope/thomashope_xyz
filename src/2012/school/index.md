@@ -1,4 +1,6 @@
 title: First Day at School
+date: 2012-09-01
+published: true
 
 > _This was originally posted on 2012-09-01 following our first day meeting the students at the school we were to be teaching at for the next year. Additional commentary has been placed in [square brackets]._
 
