@@ -114,7 +114,7 @@ def build_markdown_files():
 	pages = sorted(pages, key=lambda p: p[1]['date'], reverse=True)
 
 	for site_path, page_data, page_html in pages:
-		series_info = create_series_info(page_data['series'], page_data['title'])
+		series_info = create_series_info(page_data['series'], site_path)
 		destination = os.path.join(dest_dir, site_path)
 		create_dirs(os.path.split(destination)[0])
 		with open(destination, 'w') as file:
@@ -124,7 +124,7 @@ def build_markdown_files():
 				.replace('$$DATE_EDITED$$', page_data['date_edited'])
 				.replace('$$GIT_HISTORY_LINK$$', page_data['git_history_link']))
 
-def create_series_info(series, this_title):
+def create_series_info(series, this_site_path):
 	if not series:
 		return ''
 	entries = []
@@ -134,7 +134,7 @@ def create_series_info(series, this_title):
 	entries.reverse() # pages are sorted newest first, but we want entries sorted oldest first
 	html = f'<div class="series-footer">\n<p>This page is part of the series \'{series}\'. Check out the other entries in the series below.</p>\n<ol>\n'
 	for site_path, title in entries:
-		html += f'<li><a href="/{site_path}">{title}</a> {" <- you are here" if title == this_title else ""}</li>'
+		html += f'<li><a href="/{site_path}">{title}</a> {" <- you are here" if site_path == this_site_path else ""}</li>'
 	html += '</ol></div>\n'
 	return html
 
