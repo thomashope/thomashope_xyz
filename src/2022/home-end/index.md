@@ -1,4 +1,4 @@
-title: Fixing the Home and End Keys on MacOS
+title: Better Home and End Keys on MacOS
 description: With a little Cocoa trick form the early days of NeXT
 image: /2022/home-end/keys.jpg
 date: 2022-10-12

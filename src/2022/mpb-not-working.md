@@ -1,6 +1,9 @@
 title: Fixing MaterialPropertyBlocks on static objects in Unity
 description: If your MaterialPropertyBlock aren't working in Unity, disable static batching
 image: /2022/mpb-not-working/static-menu.png
+date: 2022-04-22
+published: true
+featured: true
 
 # `MaterialPropertyBlock`s and Static Batching
 

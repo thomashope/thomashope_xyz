@@ -1,5 +1,8 @@
 title: OnDestroy() Only in Edit Mode in Unity
 description: How to call a function only when a game object is destroyed in edit mode. Building tools in Unity.
+date: 2022-03-31
+published: true
+featured: true
 
 # Implementing `OnDestroyInEditor()` in Unity
 

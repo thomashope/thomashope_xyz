@@ -1,14 +1,14 @@
 title: Custom Selection in Unity Scene View
 description: Track the click count on mouse down, but do selection on mouse up
+date: 2022-05-18
+published: true
+featured: true
 
 # Double Click Selection in the Scene View
 
 One of the designers requested that double clicking on an object in the scene view would select all objects in the same group.
 
-<video autoplay loop muted playsinline disableRemotePlayback x-webkit-airplay="deny" disablePictureInPicture>
-  <source src="/2022/scene-view-double-click/double-click.webm" type="video/webm" />
-  <source src="/2022/scene-view-double-click/double-click.mp4" type="video/mp4" />
-</video>
+$$AUTOPLAY_VIDEO(/2022/scene-view-double-click/double-click.webm)$$
 
 A good idea that in the end didn't require much code to implement, but it did require a little hunting around to find an acceptable solution.
 
