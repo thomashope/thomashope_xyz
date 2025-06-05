@@ -66,6 +66,12 @@ def get_page_data(meta_data):
 		'featured': featured,
 	}
 
+def get_date_edited(path):
+	return run_cmd(['git','log','-1','--pretty="%aD"', path]).strip(' \n"')
+
+def get_git_history_link(path):
+	return 'https://github.com/thomashope/thomashope_xyz/commits/main/' + path
+
 def insert_page_data(text, page_data):
 	return text \
 		.replace('$$TITLE$$', page_data['title']) \
@@ -94,8 +100,8 @@ def build_markdown_files():
 
 		site_path = os.path.splitext(path[len(src_dir)+1:])[0] + '.html'
 		destination = os.path.join(dest_dir, site_path)
-		date_edited = run_cmd(['git','log','-1','--pretty="%aD"', path]).strip(' \n"')
-		git_history_link = 'https://github.com/thomashope/thomashope_xyz/commits/main/' + path
+		date_edited = get_date_edited(path)
+		git_history_link = get_git_history_link(path)
 		create_dirs(os.path.split(destination)[0])
 
 		url = 'https://thomashope.xyz/' + site_path
@@ -124,17 +130,20 @@ def create_pages_list(pages):
 def build_archive():
 	published_pages_html_list = create_pages_list(pages)
 	
-	archive_md = open(os.path.join(src_dir, 'archive', 'index.md')).read()
+	src_path = os.path.join(src_dir, 'archive', 'index.md')
+	archive_md = open(src_path).read()
 	archive_md = archive_md.replace('$$PUBLISHED_PAGES_LIST$$', published_pages_html_list)
 	archive_html = md.convert(archive_md)
 
 	page_data = get_page_data(md.Meta)
+	date_edited = get_date_edited(src_path)
+	git_history_link = get_git_history_link(src_path)
 	url = 'https://thomashope.xyz/archive'
 	archive_html = insert_page_data(page_template, page_data) \
 		.replace('$$URL$$', url) \
 		.replace('$$CONTENT$$', archive_html) \
-		.replace('$$DATE_EDITED$$', 'TODO: insert date edited') \
-		.replace('$$GIT_HISTORY_LINK$$', 'TODO: insert link to file in git')
+		.replace('$$DATE_EDITED$$', date_edited) \
+		.replace('$$GIT_HISTORY_LINK$$', git_history_link)
 
 	destination = os.path.join(dest_dir, 'archive', 'index.html')
 	create_dirs(os.path.split(destination)[0])
@@ -145,17 +154,20 @@ def build_archive():
 def build_homepage():
 	featured_pages_html_list = create_pages_list([page for page in pages if page[3]['featured']])
 	
-	homepage_md = open(os.path.join(src_dir, 'index.md')).read()
+	src_path = os.path.join(src_dir, 'index.md')
+	homepage_md = open(src_path).read()
 	homepage_md = homepage_md.replace('$$FEATURED_PAGES_LIST$$', featured_pages_html_list)
 	homepage_html = md.convert(homepage_md)
 
 	page_data = get_page_data(md.Meta)
+	date_edited = get_date_edited(src_path)
+	git_history_link = get_git_history_link(src_path)
 	url = 'https://thomashope.xyz/archive'
 	homepage_html = insert_page_data(page_template, page_data) \
 		.replace('$$URL$$', url) \
 		.replace('$$CONTENT$$', homepage_html) \
-		.replace('$$DATE_EDITED$$', 'TODO: insert date edited') \
-		.replace('$$GIT_HISTORY_LINK$$', 'TODO: insert link to file in git')
+		.replace('$$DATE_EDITED$$', date_edited) \
+		.replace('$$GIT_HISTORY_LINK$$', git_history_link)
 
 	with open(os.path.join(dest_dir, 'index.html'), 'w') as file:
 		file.write(homepage_html)
