@@ -30,8 +30,9 @@ pre code {
 	box-shadow: 4px 4px 6px #aaa;
 	display: inline-block;
 	min-width: 60%;
-	max-width: 90%;
+	max-width: 100%;
 	overflow: auto;
+	box-sizing: border-box;
 }
 
 small a:link,
@@ -60,6 +61,12 @@ ul, ol {
 
 li {
 	margin-bottom: 0.4em;
+}
+
+time {
+	font-family: monospace;
+	color: #666;
+	padding-right: 1em;
 }
 
 /* tables */
