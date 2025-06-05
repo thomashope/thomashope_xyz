@@ -1,6 +1,9 @@
 title: Pretty Debug.log() formatting
 description: How to use colored text in Unity's debug console
 image: /2022/unity-debug-log/text.png
+date: 2022-05-13
+published: true
+featured: true
 
 # `Debug.log()` Formatting
 

@@ -46,9 +46,37 @@ def get_macro_expansion(macro):
 		return snippet.replace('$$FILE$$', file_no_ext)
 	return '<!-- ERROR EXPANDING MACRO ' + str(macro) + '-->'
 
+def get_page_data(meta_data):
+	title = meta_data.get('title', ['Thomas Hope'])[0]
+	description = meta_data.get('description', [''])[0]
+	image_path = meta_data.get('image', ['/res/diving.jpg'])[0]
+	date = meta_data.get('date', ['YYYY-MM-DD'])[0]
+	published = meta_data.get('published', [''])[0].lower() == 'true'
+	featured = meta_data.get('featured', [''])[0].lower() == 'true'
+
+	if len(description) > 120:
+		print_warning(f'Description should be kept under 120 characters! Length is {len(description)}')
+
+	return {
+		'title': title,
+		'description': description,
+		'image_path': image_path,
+		'date': date,
+		'published': published,
+		'featured': featured,
+	}
+
+def insert_page_data(text, page_data):
+	return text \
+		.replace('$$TITLE$$', page_data['title']) \
+		.replace('$$DESCRIPTION$$', page_data['description']) \
+		.replace('$$IMAGE$$', page_data['image_path'])
+
 def build_markdown_files():
 	globpath = os.path.join(src_dir, "**", "*.md")
 	print('mirroring files', globpath)
+
+	global pages
 
 	for path in glob.iglob(globpath, recursive=True):
 		with open(path, 'r') as file:
@@ -59,28 +87,10 @@ def build_markdown_files():
 				text = text.replace(match, get_macro_expansion(macro))
 			html = md.convert(text)
 
-		if 'published' not in md.Meta or md.Meta['published'][0].lower() != 'true':
+		page_data = get_page_data(md.Meta)
+
+		if not page_data['published']:
 			continue
-
-		title = 'Thomas Hope'
-		if 'title' in md.Meta:
-			title = md.Meta['title'][0]
-
-		description = ' '
-		if 'description' in md.Meta:
-			description = md.Meta['description'][0]
-
-		image_path = '/res/diving.jpg'
-		if 'image' in md.Meta:
-			image_path = md.Meta['image'][0]
-
-		max_description_length = 120
-		if len(description) > max_description_length:
-			print_warning('Description should be kept under ' + str(max_description_length) + ' characters! Length is ' + str(len(description)))
-
-		date = 'YYYY-MM-DD'
-		if 'date' in md.Meta:
-			date = md.Meta['date'][0]
 
 		site_path = os.path.splitext(path[len(src_dir)+1:])[0] + '.html'
 		destination = os.path.join(dest_dir, site_path)
@@ -90,37 +100,39 @@ def build_markdown_files():
 
 		url = 'https://thomashope.xyz/' + site_path
 
-		pages.append([date, site_path, title])		
+		pages.append([page_data['date'], site_path, page_data['title'], page_data])
 
 		with open(destination, 'w') as file:
-			file.write(page_template
-				.replace('$$TITLE$$', title)
-				.replace('$$DESCRIPTION$$', description)
+			file.write(insert_page_data(page_template, page_data)
 				.replace('$$URL$$', url)
-				.replace('$$IMAGE$$', image_path)
 				.replace('$$CONTENT$$', html)
 				.replace('$$DATE_EDITED$$', date_edited)
 				.replace('$$GIT_HISTORY_LINK$$', git_history_link))
 
 		md.reset()
 
-def build_archive():
-	# Sort pages by date descending (assuming ISO format: YYYY-MM-DD)
-	sorted_pages = sorted(pages, key=lambda p: p[0], reverse=True)
+ 	# Sort pages by date, assuming ISO format: YYYY-MM-DD
+	pages = sorted(pages, key=lambda p: p[0], reverse=True)
 
+def create_pages_list(pages):
 	items = []
-	for date, site_path, title in sorted_pages:
+	for date, site_path, title, page_data in pages:
 		item_html = f'<li><time>{date}</time><a href="../{site_path}">{title}</a></li>'
 		items.append(item_html)
+	return '<ul style="list-style: none; padding: 0;">\n' + '\n'.join(items) + '\n</ul>'
 
-	content = '<ul style="list-style: none; padding: 0;">\n' + '\n'.join(items) + '\n</ul>'
+def build_archive():
+	published_pages_html_list = create_pages_list(pages)
+	
+	archive_md = open(os.path.join(src_dir, 'archive', 'index.md')).read()
+	archive_md = archive_md.replace('$$PUBLISHED_PAGES_LIST$$', published_pages_html_list)
+	archive_html = md.convert(archive_md)
 
-	archive_html = page_template \
-		.replace('$$TITLE$$', 'Thomas Hope') \
-		.replace('$$DESCRIPTION$$', 'Homepage') \
-		.replace('$$URL$$', 'https://thomashope.xyz/') \
-		.replace('$$IMAGE$$', '/res/diving.jpg') \
-		.replace('$$CONTENT$$', content) \
+	page_data = get_page_data(md.Meta)
+	url = 'https://thomashope.xyz/archive'
+	archive_html = insert_page_data(page_template, page_data) \
+		.replace('$$URL$$', url) \
+		.replace('$$CONTENT$$', archive_html) \
 		.replace('$$DATE_EDITED$$', 'TODO: insert date edited') \
 		.replace('$$GIT_HISTORY_LINK$$', 'TODO: insert link to file in git')
 
@@ -130,12 +142,31 @@ def build_archive():
 	with open(destination, 'w') as file:
 		file.write(archive_html)
 
+def build_homepage():
+	featured_pages_html_list = create_pages_list([page for page in pages if page[3]['featured']])
+	
+	homepage_md = open(os.path.join(src_dir, 'index.md')).read()
+	homepage_md = homepage_md.replace('$$FEATURED_PAGES_LIST$$', featured_pages_html_list)
+	homepage_html = md.convert(homepage_md)
+
+	page_data = get_page_data(md.Meta)
+	url = 'https://thomashope.xyz/archive'
+	homepage_html = insert_page_data(page_template, page_data) \
+		.replace('$$URL$$', url) \
+		.replace('$$CONTENT$$', homepage_html) \
+		.replace('$$DATE_EDITED$$', 'TODO: insert date edited') \
+		.replace('$$GIT_HISTORY_LINK$$', 'TODO: insert link to file in git')
+
+	with open(os.path.join(dest_dir, 'index.html'), 'w') as file:
+		file.write(homepage_html)
+
 def main():
 	print('Starting build...')
 	create_dirs(dest_dir)
 	mirror_files_with_extensions(['html', 'css', 'jpg', 'jpeg', 'png', 'webm', 'mp4', 'ico', 'svg', 'webmanifest'])
 	build_markdown_files()
 	build_archive()
+	build_homepage()
 	print('Done!')
 
 if __name__ == '__main__':
