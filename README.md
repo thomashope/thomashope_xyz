@@ -22,6 +22,9 @@ Open a CMD at this repo
 title: Title to be displayed in the browser tab
 description: Description showen on twitter cards and search engine previews
 image: /2022/path/to/image.png
+date: YYYY-MM-DD
+published: true
+featured: true
 ```
 
 You can preview the rendered social card using [this site](https://www.opengraph.xyz/url/https%3A%2F%2Fthomashope.xyz%2F) or on [twitter](https://cards-dev.twitter.com/validator).

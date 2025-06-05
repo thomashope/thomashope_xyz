@@ -1,5 +1,8 @@
 title: Short Variable Names
 description: A defence of i, j, it, et al.
+date: 2021-05-14
+published: true
+featured: true
 
 # Short Variable Names
 

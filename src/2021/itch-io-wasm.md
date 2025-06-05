@@ -1,5 +1,8 @@
 title: Hosting WebAssembly on itch.io
 description: You compiled it with Emscripten, now what.
+date: 2021-03-21
+published: true
+featured: true
 
 # Hosting your WebAssembly Game on itch.io
 

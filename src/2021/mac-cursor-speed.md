@@ -1,5 +1,8 @@
 title: Mac Cursor Speed
 description: Increase the cursor speed on mac above what is allowed in the UI.
+date: 2021-03-30
+published: true
+featured: true
 
 # Faster Cursor on Mac
 

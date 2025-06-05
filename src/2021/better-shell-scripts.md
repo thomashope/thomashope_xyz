@@ -1,5 +1,8 @@
 title: Better Shell Scripts
 description: Trying desperately to make batch script even slightly less terrible
+date: 2021-03-30
+published: true
+featured: true
 
 # Better Shell Scripts
 
