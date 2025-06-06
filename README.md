@@ -1,4 +1,4 @@
-# [Tom's Website](thope.xyz)
+# [Tom's Website](https://thope.xyz)
 
 ## Building (mac)
 
