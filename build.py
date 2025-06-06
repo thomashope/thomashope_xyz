@@ -47,7 +47,7 @@ def get_macro_expansion(macro):
 		return snippet.replace('$$FILE$$', file_no_ext)
 	return '<!-- ERROR EXPANDING MACRO ' + str(macro) + '-->'
 
-def get_page_data(meta_data):
+def get_page_data(meta_data, path):
 	title = meta_data.get('title', ['Thomas Hope'])[0]
 	description = meta_data.get('description', [''])[0]
 	image_path = meta_data.get('image', ['/res/diving.jpg'])[0]
@@ -55,6 +55,8 @@ def get_page_data(meta_data):
 	published = meta_data.get('published', [''])[0].lower() == 'true'
 	featured = meta_data.get('featured', [''])[0].lower() == 'true'
 	series = meta_data.get('series', [''])[0].lower()
+	date_edited = get_date_edited(path)
+	git_history_link = get_git_history_link(path)
 
 	if len(description) > 120:
 		print_warning(f'Description should be kept under 120 characters! Length is {len(description)}')
@@ -66,7 +68,9 @@ def get_page_data(meta_data):
 		'date': date,
 		'published': published,
 		'featured': featured,
-		'series': series
+		'series': series,
+		'date_edited': date_edited,
+		'git_history_link': git_history_link,
 	}
 
 def get_date_edited(path):
@@ -79,7 +83,9 @@ def insert_page_data(text, page_data):
 	return text \
 		.replace('$$TITLE$$', page_data['title']) \
 		.replace('$$DESCRIPTION$$', page_data['description']) \
-		.replace('$$IMAGE$$', publish_domain + page_data['image_path'])
+		.replace('$$IMAGE$$', publish_domain + page_data['image_path']) \
+		.replace('$$DATE_EDITED$$', page_data['date_edited']) \
+		.replace('$$GIT_HISTORY_LINK$$', page_data['git_history_link'])
 
 def build_markdown_files():
 	globpath = os.path.join(src_dir, "**", "*.md")
@@ -96,15 +102,12 @@ def build_markdown_files():
 				text = text.replace(match, get_macro_expansion(macro))
 			html = md.convert(text)
 
-		page_data = get_page_data(md.Meta)
+		page_data = get_page_data(md.Meta, path)
 
 		if not page_data['published']:
 			continue
 
 		site_path = os.path.splitext(path[len(src_dir)+1:])[0] + '.html'
-
-		page_data['date_edited'] = get_date_edited(path)
-		page_data['git_history_link'] = get_git_history_link(path)
 
 		pages.append([site_path, page_data, html])
 
@@ -120,9 +123,7 @@ def build_markdown_files():
 		with open(destination, 'w') as file:
 			file.write(insert_page_data(page_template, page_data)
 				.replace('$$URL$$', publish_domain + '/' + site_path)
-				.replace('$$CONTENT$$', page_html + series_info)
-				.replace('$$DATE_EDITED$$', page_data['date_edited'])
-				.replace('$$GIT_HISTORY_LINK$$', page_data['git_history_link']))
+				.replace('$$CONTENT$$', page_html + series_info))
 
 def create_series_info(series, this_site_path):
 	if not series:
@@ -159,14 +160,12 @@ def build_archive():
 	archive_md = archive_md.replace('$$PUBLISHED_PAGES_LIST$$', published_pages_html_list)
 	html = md.convert(archive_md)
 
-	page_data = get_page_data(md.Meta)
+	page_data = get_page_data(md.Meta, src_path)
 	date_edited = get_date_edited(src_path)
 	git_history_link = get_git_history_link(src_path)
 	html = insert_page_data(page_template, page_data) \
 		.replace('$$URL$$', publish_domain + '/archive') \
-		.replace('$$CONTENT$$', html) \
-		.replace('$$DATE_EDITED$$', date_edited) \
-		.replace('$$GIT_HISTORY_LINK$$', git_history_link)
+		.replace('$$CONTENT$$', html)
 
 	destination = os.path.join(dest_dir, 'archive', 'index.html')
 	create_dirs(os.path.split(destination)[0])
@@ -182,14 +181,12 @@ def build_homepage():
 	homepage_md = homepage_md.replace('$$FEATURED_PAGES_LIST$$', featured_pages_html_list)
 	html = md.convert(homepage_md)
 
-	page_data = get_page_data(md.Meta)
+	page_data = get_page_data(md.Meta, src_path)
 	date_edited = get_date_edited(src_path)
 	git_history_link = get_git_history_link(src_path)
 	html = insert_page_data(page_template, page_data) \
 		.replace('$$URL$$', publish_domain) \
-		.replace('$$CONTENT$$', html) \
-		.replace('$$DATE_EDITED$$', date_edited) \
-		.replace('$$GIT_HISTORY_LINK$$', git_history_link)
+		.replace('$$CONTENT$$', html)
 
 	with open(os.path.join(dest_dir, 'index.html'), 'w') as file:
 		file.write(html)
