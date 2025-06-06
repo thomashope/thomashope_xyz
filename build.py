@@ -8,6 +8,7 @@ import re
 
 src_dir = 'src'
 dest_dir = 'public'
+publish_domain = 'https://thope.xyz'
 page_template = open(os.path.join(src_dir, 'res', 'template.html')).read()
 
 md = markdown.Markdown(extensions=['fenced_code', 'meta', 'tables', 'footnotes'])
@@ -78,7 +79,7 @@ def insert_page_data(text, page_data):
 	return text \
 		.replace('$$TITLE$$', page_data['title']) \
 		.replace('$$DESCRIPTION$$', page_data['description']) \
-		.replace('$$IMAGE$$', page_data['image_path'])
+		.replace('$$IMAGE$$', publish_domain + page_data['image_path'])
 
 def build_markdown_files():
 	globpath = os.path.join(src_dir, "**", "*.md")
@@ -102,7 +103,6 @@ def build_markdown_files():
 
 		site_path = os.path.splitext(path[len(src_dir)+1:])[0] + '.html'
 
-		page_data['url'] = 'https://thomashope.xyz/' + site_path
 		page_data['date_edited'] = get_date_edited(path)
 		page_data['git_history_link'] = get_git_history_link(path)
 
@@ -119,7 +119,7 @@ def build_markdown_files():
 		create_dirs(os.path.split(destination)[0])
 		with open(destination, 'w') as file:
 			file.write(insert_page_data(page_template, page_data)
-				.replace('$$URL$$', page_data['url'])
+				.replace('$$URL$$', publish_domain + '/' + site_path)
 				.replace('$$CONTENT$$', page_html + series_info)
 				.replace('$$DATE_EDITED$$', page_data['date_edited'])
 				.replace('$$GIT_HISTORY_LINK$$', page_data['git_history_link']))
@@ -162,9 +162,8 @@ def build_archive():
 	page_data = get_page_data(md.Meta)
 	date_edited = get_date_edited(src_path)
 	git_history_link = get_git_history_link(src_path)
-	url = 'https://thomashope.xyz/archive'
 	html = insert_page_data(page_template, page_data) \
-		.replace('$$URL$$', url) \
+		.replace('$$URL$$', publish_domain + '/archive') \
 		.replace('$$CONTENT$$', html) \
 		.replace('$$DATE_EDITED$$', date_edited) \
 		.replace('$$GIT_HISTORY_LINK$$', git_history_link)
@@ -186,9 +185,8 @@ def build_homepage():
 	page_data = get_page_data(md.Meta)
 	date_edited = get_date_edited(src_path)
 	git_history_link = get_git_history_link(src_path)
-	url = 'https://thomashope.xyz/archive'
 	html = insert_page_data(page_template, page_data) \
-		.replace('$$URL$$', url) \
+		.replace('$$URL$$', publish_domain) \
 		.replace('$$CONTENT$$', html) \
 		.replace('$$DATE_EDITED$$', date_edited) \
 		.replace('$$GIT_HISTORY_LINK$$', git_history_link)

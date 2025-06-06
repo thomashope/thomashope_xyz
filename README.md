@@ -1,4 +1,4 @@
-# thomashope_xyz
+# [Tom's Website](thope.xyz)
 
 ## Building (mac)
 
@@ -47,7 +47,6 @@ Alternatively use (Cyberduck)[https://cyberduck.io] to connect to the Fastmail s
 
 ## TODO
 
-* generate an all posts archive page that includes the old tumblr posts
 * publish automatically when pushing to git main
 * add macro for video gif embeds {{ video, path/to/video.mp4 }}, could maybe use the attribute extension instead?
 * try get the shell scripts to work on both windows and mac
