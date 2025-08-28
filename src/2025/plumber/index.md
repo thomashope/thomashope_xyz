@@ -1,8 +1,11 @@
-title: My Plumber Cheats on Call of Duty
-description: He uses a controller mod, only to help him aim.
+title: My Plumber Cheats in Call of Duty
+description: He uses a modded controller but only to help him aim.
 date: 2025-08-28
+image: /2025/plumber/scales.png
 published: true
 featured: true
+
+# My Plumber Cheats in Call of Duty
 
 Some time last year a plumber came to fix a radiator in my flat.
 
