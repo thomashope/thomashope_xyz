@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 -m http.server --director public
+python3 -m http.server --directory public
