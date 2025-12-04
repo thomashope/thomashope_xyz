@@ -162,3 +162,24 @@ video {
 	width: 100%;
 	height: 100%;
 }
+
+.admonition {
+	border: 1px solid #999;
+	border-radius: 8px;
+	padding: 0.5em 1em;
+	margin: 16px 0;
+	box-shadow: 4px 4px 6px #aaa;
+}
+
+.admonition-title {
+	margin: 0 0 8px 0;
+	font-weight: 600;
+}
+
+.admonition p:last-child {
+	margin: 0;
+}
+
+.admonition.note {
+	background-color: #f2f2f2;
+}

@@ -11,7 +11,7 @@ dest_dir = 'public'
 publish_domain = 'https://thope.xyz'
 page_template = open(os.path.join(src_dir, 'res', 'template.html')).read()
 
-md = markdown.Markdown(extensions=['fenced_code', 'meta', 'tables', 'footnotes'])
+md = markdown.Markdown(extensions=['fenced_code', 'meta', 'tables', 'footnotes', 'toc', 'admonition'])
 
 pages = []
 
